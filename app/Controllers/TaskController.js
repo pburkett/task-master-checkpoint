@@ -10,12 +10,18 @@ function _draw() {
     }
     targetElem.innerHTML = template
 }
+function _loadLocalStorage() {
+    taskService.loadLocalStorage()
+}
+
 
 export default class TaskController {
     constructor() {
         console.log('controller init');
         ProxyState.on("tasks", _draw)
+        _loadLocalStorage()
         _draw()
+
     }
 
     pickColor(color, btnNumber) {
@@ -41,6 +47,11 @@ export default class TaskController {
     }
     deleteTask(id) {
         if (window.confirm("Are you sure you want to delete this task?")) {
+            taskService.deleteTask(id)
         }
+    }
+    deleteListItem(id, name) {
+        if (window.confirm("Are you sure you want to delete this to do item?"))
+            taskService.deleteListItem(id, name)
     }
 }

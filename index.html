@@ -20,7 +20,7 @@
             </div>
             <div class="row mx-5">
                 <form class="d-flex" onsubmit="app.TaskController.createTask()">
-                    <input type="text" id="name" class="cus-form" placeholder="List Name..."></input>
+                    <input type="text" id="name" class="cus-form" placeholder="List Name..." maxlength="14"></input>
                     <button type="button" class="ml-3 p-0 bg-blue color-btn" id="color-dropdown-container">
                         <div id="color-dropdown-selector" class="p-2">
                             <div onclick="app.TaskController.pickColor('red', 1)" id="color-btn-1"

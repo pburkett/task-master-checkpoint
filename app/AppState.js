@@ -7,7 +7,7 @@ class AppState extends EventEmitter {
   // /** @type {Value[]} */
   // values = []
 
-  tasks = [new Task('lorem ipsum', 'orange')]
+  tasks = []
 
   selectedColor = 'blue'
 }

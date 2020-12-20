@@ -10704,6 +10704,7 @@ main {
 #color-dropdown-container {
   height: 100%;
   position: relative;
+  outline: none;
 }
 
 #color-dropdown-selector {

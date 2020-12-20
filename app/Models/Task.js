@@ -1,10 +1,10 @@
 import { generateId } from "../Utils/GenerateId.js"
 
 export default class Task {
-    constructor(name, color, id) {
+    constructor(name, color, id, items) {
         this.name = name
         this.color = color
-        this.items = []
+        this.items = items || []
         this.id = id || generateId()
     }
 
@@ -25,6 +25,7 @@ export default class Task {
                 <div class="row my-1 align-items-center">
                     <input onclick="app.TaskController.checkBox('${this.id}', '${item.name}')" class="col-1 list-item-checkbox" type="checkbox"></input>
                     <h5 class="col my-0">${item.name}</h5>
+                    <button onclick="app.TaskController.deleteListItem('${this.id}','${item.name}')" class="fa fa-times bg-${this.color} border-none justify-self-end" aria-hidden="true"></button>
                 </div>
             `
         }
