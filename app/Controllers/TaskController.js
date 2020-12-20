@@ -35,11 +35,13 @@ export default class TaskController {
         window.event.preventDefault()
         let form = window.event.target
         taskService.createTask(form.name.value)
+        form.reset()
     }
     createListItem() {
         window.event.preventDefault()
         let form = window.event.target
         taskService.createListItem({ name: form.name.value, id: form.id.value })
+        form.reset()
     }
     checkBox(id, name) {
         console.log(id);
@@ -51,7 +53,7 @@ export default class TaskController {
         }
     }
     deleteListItem(id, name) {
-        if (window.confirm("Are you sure you want to delete this to do item?"))
+        if (window.confirm("Are you sure you want to delete this to-do item?"))
             taskService.deleteListItem(id, name)
     }
 }

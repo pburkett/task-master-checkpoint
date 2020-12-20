@@ -23,7 +23,7 @@ export default class Task {
             let item = this.items[index]
             template += `
                 <div class="row my-1 align-items-center">
-                    <input onclick="app.TaskController.checkBox('${this.id}', '${item.name}')" class="col-1 list-item-checkbox" type="checkbox"></input>
+                    <input onclick="app.TaskController.checkBox('${this.id}', '${item.name}')" ${item.checked ? 'checked' : ''} class="col-1 list-item-checkbox" type="checkbox"></input>
                     <h5 class="col my-0">${item.name}</h5>
                     <button onclick="app.TaskController.deleteListItem('${this.id}','${item.name}')" class="fa fa-times bg-${this.color} border-none justify-self-end" aria-hidden="true"></button>
                 </div>
