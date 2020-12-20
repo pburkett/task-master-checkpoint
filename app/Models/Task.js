@@ -8,10 +8,12 @@ export default class Task {
     }
 
     get Template() {
-        let template = `<div class="col-3 mx-2 px-0 task-card">
+        let template = `
+        <div class="col-3 mx-2 px-0 mb-5 task-card">
             <h3 class="task-header py-2 bg-${this.color} text-center"> ${this.name}</h3>
                 <div class="row mx-4">
-                    <div class="col">`
+                    <div class="col">
+                    `
         for (let index in this.items) {
             let item = this.items[index]
             template += `

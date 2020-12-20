@@ -19,24 +19,25 @@
                 <h1 class="col-4 mx-auto my-3 text-center" id="page-title">TaskMaster</h1>
             </div>
             <div class="row mx-5">
-                <form class="d-flex">
-                    <input type="text" class="cus-form" placeholder="List Name..."></input>
-                    <button type="button" class="ml-3 p-0 color-btn" id="color-dropdown-container">
+                <form class="d-flex" onsubmit="app.TaskController.createTask()">
+                    <input type="text" id="name" class="cus-form" placeholder="List Name..."></input>
+                    <button type="button" class="ml-3 p-0 bg-blue color-btn" id="color-dropdown-container">
                         <div id="color-dropdown-selector" class="p-2">
-                            <div onclick="app.listController.pickColor('red')" id="color-btn-1" class="color-btn">
+                            <div onclick="app.TaskController.pickColor('red', 1)" id="color-btn-1"
+                                class="color-btn bg-red">
                             </div>
-                            <div onclick="app.listController.pickColor('green')" id="color-btn-2" class="color-btn">
+                            <div onclick="app.TaskController.pickColor('green', 2)" id="color-btn-2"
+                                class="color-btn bg-green">
                             </div>
-                            <div onclick="app.listController.pickColor('purple')" id="color-btn-3" class="color-btn">
+                            <div onclick="app.TaskController.pickColor('purple', 3)" id="color-btn-3"
+                                class="color-btn bg-purple">
                             </div>
-                            <div onclick="app.listController.pickColor('yellow')" id="color-btn-4" class="color-btn">
-                            </div>
-                            <div onclick="app.listController.pickColor('blue')" id="color-btn-5" class="color-btn">
+                            <div onclick="app.TaskController.pickColor('yellow', 4)" id="color-btn-4"
+                                class="color-btn bg-yellow">
                             </div>
                         </div>
                     </button>
-                    <button class="btn btn-primary ml-3" type="submit"
-                        onsubmit="app.listController.createList()">Create</button>
+                    <button class="btn btn-primary ml-3" type="submit">Create</button>
                 </form>
             </div>
         </div>

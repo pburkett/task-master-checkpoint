@@ -7,7 +7,9 @@ class AppState extends EventEmitter {
   // /** @type {Value[]} */
   // values = []
 
-  tasks = [new Task('Mow the Dog', 'red')]
+  tasks = [new Task('lorem ipsum', 'orange')]
+
+  selectedColor = 'blue'
 }
 
 export const ProxyState = new Proxy(new AppState(), {

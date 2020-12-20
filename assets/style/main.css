@@ -10704,7 +10704,6 @@ main {
 #color-dropdown-container {
   height: 100%;
   position: relative;
-  background-color: blue;
 }
 
 #color-dropdown-selector {
@@ -10729,21 +10728,6 @@ main {
   border: gray;
   border-style: solid;
   border-width: 2px;
-}
-#color-btn-1 {
-  background-color: red;
-}
-#color-btn-2 {
-  background-color: green;
-}
-#color-btn-3 {
-  background-color: purple;
-}
-#color-btn-4 {
-  background-color: yellow;
-}
-#color-btn-5 {
-  background-color: blue;
 }
 
 .cus-form {
