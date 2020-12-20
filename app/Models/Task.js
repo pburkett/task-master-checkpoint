@@ -6,13 +6,16 @@ export default class Task {
         this.color = color
         this.items = []
         this.id = id || generateId()
-        console.log(this.id);
     }
 
     get Template() {
         let template = `
         <div class="col-3 mx-2 px-0 mb-5 task-card">
-            <h3 class="task-header py-2 bg-${this.color} text-center"> ${this.name}</h3>
+            <div class="task-header d-grid bg-${this.color}">
+                
+                <button onclick="app.TaskController.deleteTask('${this.id}')" class="fa fa-times bg-${this.color} border-none justify-self-end" aria-hidden="true"></button>
+                <h3 class="justify-self-center  align-self-center"> ${this.name}</h3>
+            </div>
                 <div class="row mx-4">
                     <div class="col">
                     `
@@ -20,8 +23,8 @@ export default class Task {
             let item = this.items[index]
             template += `
                 <div class="row my-1 align-items-center">
-                    <input class="col-1 list-item-checkbox" type="checkbox"></input>
-                    <h5 class="col my-0">${item}</h5>
+                    <input onclick="app.TaskController.checkBox('${this.id}', '${item.name}')" class="col-1 list-item-checkbox" type="checkbox"></input>
+                    <h5 class="col my-0">${item.name}</h5>
                 </div>
             `
         }
@@ -33,7 +36,7 @@ export default class Task {
                 <i class="fa fa-plus"></i></button>
             </form>
         </div>
-    </div >
+    </div>
 </div >
         `
         return template

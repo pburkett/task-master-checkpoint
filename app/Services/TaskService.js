@@ -16,8 +16,15 @@ class TaskService {
     }
     createListItem({ name, id }) {
         let task = ProxyState.tasks.find(t => t.id == id)
-        task.items = [...task.items, name]
+        let taskItem = { name: name, checked: false }
+        task.items = [...task.items, taskItem]
         ProxyState.tasks = ProxyState.tasks
+    }
+    checkBox(id, name) {
+        let task = ProxyState.tasks.find(t => t.id == id)
+        let item = task.items.find(i => i.name == name)
+        item.checked = !item.checked
+        console.log(item);
     }
 
 }

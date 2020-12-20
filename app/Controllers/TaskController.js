@@ -1,6 +1,7 @@
 import task from "../Models/Task.js"
 import { ProxyState } from "../AppState.js"
 import { taskService } from "../Services/TaskService.js"
+import Task from "../Models/Task.js"
 function _draw() {
     let targetElem = document.getElementById("task-card-row")
     let template = ''
@@ -33,5 +34,13 @@ export default class TaskController {
         window.event.preventDefault()
         let form = window.event.target
         taskService.createListItem({ name: form.name.value, id: form.id.value })
+    }
+    checkBox(id, name) {
+        console.log(id);
+        taskService.checkBox(id, name)
+    }
+    deleteTask(id) {
+        if (window.confirm("Are you sure you want to delete this task?")) {
+        }
     }
 }

@@ -10764,4 +10764,16 @@ main {
     top: 340px;
 }
 
+.justify-self-center {
+  justify-self: center !important;
+}
+.justify-self-end {
+  justify-self: end;
+}
+.align-self-center {
+  align-self: center;
+}
+.d-grid {
+  display: grid;
+}
 /*# sourceMappingURL=main.css.map */
