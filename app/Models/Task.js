@@ -1,10 +1,12 @@
-
+import { generateId } from "../Utils/GenerateId.js"
 
 export default class Task {
-    constructor(name, color) {
+    constructor(name, color, id) {
         this.name = name
         this.color = color
         this.items = []
+        this.id = id || generateId()
+        console.log(this.id);
     }
 
     get Template() {
@@ -24,10 +26,11 @@ export default class Task {
             `
         }
         template += `
-            <form class="row justify-content-center task-form">
-                <input class="col-8 align-self-end cus-form" type="text" placeholder="New item...">
-                <button class="col-2 align-self-end text-dark btn btn-primary ml-3" type="submit"
-                onsubmit="app.listController.addListItem()"><i class="fa fa-plus"></i></button>
+            <form onsubmit="app.TaskController.createListItem()" class="row justify-content-center task-form">
+                <input id="name" class="col-8 align-self-end cus-form" type="text" placeholder="New item...">
+                <input type="hidden" name="id" value="${this.id}">
+                <button class="col-2 align-self-end text-dark btn btn-primary ml-3" type="submit">
+                <i class="fa fa-plus"></i></button>
             </form>
         </div>
     </div >

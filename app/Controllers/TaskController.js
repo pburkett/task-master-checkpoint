@@ -29,4 +29,9 @@ export default class TaskController {
         let form = window.event.target
         taskService.createTask(form.name.value)
     }
+    createListItem() {
+        window.event.preventDefault()
+        let form = window.event.target
+        taskService.createListItem({ name: form.name.value, id: form.id.value })
+    }
 }
