@@ -31,7 +31,7 @@ export default class Task {
         }
         template += `
             <form onsubmit="app.TaskController.createListItem()" class="row justify-content-center task-form">
-                <input id="name" class="col-8 align-self-end cus-form" type="text" placeholder="New item...">
+                <input id="name" required minLength="3" maxLength="50" class="col-8 align-self-end cus-form" type="text" placeholder="New item...">
                 <input type="hidden" name="id" value="${this.id}">
                 <button class="col-2 align-self-end text-dark btn btn-primary ml-3" type="submit">
                 <i class="fa fa-plus"></i></button>
